@@ -3,9 +3,9 @@
 *  Prof: Juan Camilo Correa Chica
 *  Fecha: Agosto 6/2018
 *  Plazo m√°ximo para enviar enlace para clonar el repositorio: Agosto 6/2018 - 09:59pm
-*  Estudiante1: Nombres y apellidos completos
-*  Estudiante2: Nombres y apellidos completos (Opcional, puede trabajar individualmente)
-*  Fecha del ultimo Commit en GitHub: Agregue la fecha y hora del ultimo Commit (aproximada)
+*  Estudiante1: Sebasti·n Alvarado Monroy
+*  Estudiante2: Nelxon Villarreal
+*  Fecha del ultimo Commit en GitHub: 07 de Agosto de 2018 
 *
 
 *  Primera parte: 
@@ -39,24 +39,52 @@ using namespace std;
 //Aqui se declaran las variables globales
 
 //Aqui se declaran los prototipos de las funciones
-
+bool checkdate( unsigned short int dia ,unsigned short int mes ,unsigned short int anio  );
 int main()
 {
 	//Esta funcion es la mas importante del programa
 	//En esta funcion se deben invocar las funciones que 
 	//usted codifique en C++
-	
+ unsigned short int dia,mes,anio;
+        cout<<"ingrese dia"<<endl;
+        cin>>dia;
+        cout<<"ingrese mes"<<endl;
+        cin>>mes;
+        cout<<"ingrese anio"<<endl;
+        cin>>anio;
+
 	//Declarando una variable localecon
-	bool verifica_fecha;
+        bool verifica_fecha= checkdate(dia,mes,anio);
 	
 	//Aqui puede invocar su funcion
 	
-	if(verifica_fecha)
-		cout<<"Fecha sin problemas!<<endl;
-	else
-		cout<<"Fecha presenta errores!<<endl;
-	
+        if(verifica_fecha){
+                cout<<"Fecha sin problemas!"<<endl;
+        }
+        else{
+                cout<<"Fecha presenta errores!"<<endl;
+        }
 	return 0;
 }
+bool checkdate(unsigned short int dia, unsigned short int mes, unsigned short int anio){
+if(anio >0 and anio < 128){
 
-
+    if(((anio % 4 ==0 or anio % 400==0) and mes ==2 and (dia>0 and dia <30)) or mes==2 and (dia>0 and dia<29)){
+        return true;
+    }
+    else{
+        if((mes==1 or mes==3 or mes==5 or mes ==7 or mes==8 or mes==10 or mes==12) and(dia>0 and dia<32)){
+            return true;
+        }
+        else{
+            if( (mes==4 or mes==6 or mes==9 or mes==11) and (dia>0 and dia<31)){
+                return true;
+            }
+            else{ return false;}
+        }
+    }
+}
+else{
+return false;
+}
+}

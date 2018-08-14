@@ -131,8 +131,8 @@ bool anagramas(string a,string b )
 
 int main ()
 {
-    string a,b;
-    cin >> a >> b ;
+    string a="iamlordvoldemort";string b="tommarvoloriddle";
+    cout << a << " - " << b << endl ;
     if (anagramas (a,b))
     {
         cout <<"Son Anagramas" << endl;
